@@ -42,7 +42,7 @@ casbin:
 system:
   env: 'public'  # Change to "develop" to skip authentication for development mode
   addr: 8888
-  db-type: 'mysql'
+  db-type: 'sqlite'
   oss-type: 'local'    # 控制oss选择走本期还是 七牛等其他仓 自行增加其他oss仓可以在 server/utils/upload/upload.go 中 NewOss函数配置
   use-multipoint: false
 
@@ -64,16 +64,22 @@ mysql:
   log-mode: false
   log-zap: ""
 
+#sqlite 配置
+sqlite:
+  path: db.db
+  log-mode: true
+  config: 'loc=Asia/Shanghai'
+
 # local configuration
 local:
   path: 'uploads/file'
 
 # qiniu configuration (请自行七牛申请对应的 公钥 私钥 bucket �?域名地址)
 qiniu:
-  zone: 'ZoneHuadong'
-  bucket: 'qm-plus-img'
-  img-path: 'http://qmplusimg.henrongyi.top'
+  zone: ''
+  bucket: ''
+  img-path: ''
   use-https: false
-  access-key: '25j8dYBZ2wuiy0yhwShytjZDTX662b8xiFguwxzZ'
-  secret-key: 'pgdbqEsf7ooZh7W3xokP833h3dZ_VecFXPDeG5JY'
+  access-key: ''
+  secret-key: ''
   use-cdn-domains: false
