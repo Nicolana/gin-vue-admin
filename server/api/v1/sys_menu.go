@@ -11,7 +11,7 @@ import (
 	"go.uber.org/zap"
 )
 
-// @Tags AuthorityMenu
+// GetMenu @Tags AuthorityMenu
 // @Summary 获取用户动态路由
 // @Security ApiKeyAuth
 // @Produce  application/json
@@ -27,7 +27,7 @@ func GetMenu(c *gin.Context) {
 	}
 }
 
-// @Tags AuthorityMenu
+// GetBaseMenuTree @Tags AuthorityMenu
 // @Summary 获取用户动态路由
 // @Security ApiKeyAuth
 // @Produce  application/json
@@ -43,7 +43,7 @@ func GetBaseMenuTree(c *gin.Context) {
 	}
 }
 
-// @Tags AuthorityMenu
+// AddMenuAuthority @Tags AuthorityMenu
 // @Summary 增加menu和角色关联关系
 // @Security ApiKeyAuth
 // @accept application/json
@@ -66,7 +66,7 @@ func AddMenuAuthority(c *gin.Context) {
 	}
 }
 
-// @Tags AuthorityMenu
+// GetMenuAuthority @Tags AuthorityMenu
 // @Summary 获取指定角色menu
 // @Security ApiKeyAuth
 // @accept application/json
@@ -89,7 +89,7 @@ func GetMenuAuthority(c *gin.Context) {
 	}
 }
 
-// @Tags Menu
+// AddBaseMenu @Tags Menu
 // @Summary 新增菜单
 // @Security ApiKeyAuth
 // @accept application/json
@@ -117,7 +117,7 @@ func AddBaseMenu(c *gin.Context) {
 	}
 }
 
-// @Tags Menu
+// DeleteBaseMenu @Tags Menu
 // @Summary 删除菜单
 // @Security ApiKeyAuth
 // @accept application/json
@@ -140,7 +140,7 @@ func DeleteBaseMenu(c *gin.Context) {
 	}
 }
 
-// @Tags Menu
+// UpdateBaseMenu @Tags Menu
 // @Summary 更新菜单
 // @Security ApiKeyAuth
 // @accept application/json
@@ -167,7 +167,7 @@ func UpdateBaseMenu(c *gin.Context) {
 	}
 }
 
-// @Tags Menu
+// GetBaseMenuById @Tags Menu
 // @Summary 根据id获取菜单
 // @Security ApiKeyAuth
 // @accept application/json
@@ -190,7 +190,7 @@ func GetBaseMenuById(c *gin.Context) {
 	}
 }
 
-// @Tags Menu
+// GetMenuList @Tags Menu
 // @Summary 分页获取基础menu列表
 // @Security ApiKeyAuth
 // @accept application/json
@@ -214,6 +214,6 @@ func GetMenuList(c *gin.Context) {
 			Total:    total,
 			Page:     pageInfo.Page,
 			PageSize: pageInfo.PageSize,
-		},"获取成功", c)
+		}, "获取成功", c)
 	}
 }

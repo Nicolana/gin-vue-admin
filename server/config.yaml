@@ -21,7 +21,7 @@ zap:
 # redis configuration
 redis:
   db: 0
-  addr: '127.0.0.1:6379'
+  addr: 'nicolana.vicp.io:6379'
   password: ''
 
 # email configuration
@@ -42,7 +42,7 @@ casbin:
 system:
   env: 'public'  # Change to "develop" to skip authentication for development mode
   addr: 8888
-  db-type: 'sqlite'
+  db-type: 'mysql'
   oss-type: 'local'    # 控制oss选择走本期还是 七牛等其他仓 自行增加其他oss仓可以在 server/utils/upload/upload.go 中 NewOss函数配置
   use-multipoint: false
 
@@ -54,11 +54,11 @@ captcha:
 
 # mysql connect configuration
 mysql:
-  path: '127.0.0.1:3306'
+  path: 'nicolana.vicp.io:8999'
   config: 'charset=utf8mb4&parseTime=True&loc=Local'
-  db-name: 'qmPlus'
+  db-name: 'zkadmin'
   username: 'root'
-  password: 'Aa@6447985'
+  password: '123456'
   max-idle-conns: 10
   max-open-conns: 100
   log-mode: false
